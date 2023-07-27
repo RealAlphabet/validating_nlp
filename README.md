@@ -9,9 +9,13 @@
 
 ## What is this ?
 
-This repo contains an approach to validate whatever output the AI gives to the user using AI itself.
+After having carefully read https://lnkd.in/e92eQdt4 repo's that aims at validating inputs using NLP APIs (mainly OpenAI but still extensible to other LLMs), I played around with the concept using the library and browsed through the impressive examples,
 
-In the near future, I picture AI cross-validating themselves to make sure that any bot has the expected behavior and does not harm a human. Please check out the code and comment fork raise issues etc. ! Opening a GitHub Discussions panel...
+However, at the moment, this lib does not fit my use-case exactly so I did not use it in my project (for now).
+My use-case is: validate whatever output the #AI gives to the user using AI itself. In the near future, I picture different AIs cross-validating themselves to make sure that any bot has the expected behavior at all times and never harms a human.
+
+So what I did is to try to put this kind of validation in a CI pipeline and try to get systematic results; for instance I want a bot that is supposed to sell cars to never deviate of the subject.
+I kept one "flaky" test on purpose in the test suite, the one about a Russia/USA nuclear arms deal, read the console after having run the tests, the reasons of why it may sometimes refuse to validate the output are very sensible ;)
 
 <!-- ! even the most elaborate test is just a demo, don't push the code as is in production -->
 

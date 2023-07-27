@@ -1,8 +1,8 @@
 name: CI
 
 on:
-  # push:
-  #   branches: ["main"]
+  push:
+    branches: ["main"]
 
 jobs:
   test:
@@ -14,31 +14,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      
-      # scenario-2
-      - run: cd scenario-2 && npm ci && npm run test
 
-      # scenario-3
-      - run: cd scenario-3 && npm ci && npm run test
-
-      # scenario-4
-      - run: cd scenario-4 && npm ci && npm run test
-
-      # scenario-5
-      - run: cd scenario-5 && npm ci && npm run test
-
-      # scenario-6
-      - run: cd scenario-6 && npm ci && npm run test
-
-      # scenario-7
-      - run: cd scenario-7 && npm ci && npm run test
-
-      # scenario-8
-      - run: cd scenario-8 && npm ci && npm run test
-
-      # scenario-9
-      - run: cd scenario-9 && npm ci && npm run test
-
-      # scenario-X
-      # copying the env var stored in github secrets to the .env file
-      - run: cd scenario-X && echo "${{ secrets.DOTENV }}" > .env && npm ci && npm run test
+      - run: echo "${{ secrets.DOTENV }}" > .env && npm ci && npm run test
